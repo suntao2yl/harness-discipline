@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Reusable engineering-discipline skills (TDD, completion verification, change spec) for Claude Code.",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
       "name": "harness-discipline",
       "source": "./plugins/harness-discipline",
       "description": "Three reusable discipline skills: /tdd-plan, /completion-verify, /change-spec. Used standalone or by harness-plan / harness-engineering for shared discipline.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "workflow",
       "tags": ["tdd", "verification", "rfc", "discipline", "spec", "test-driven"]
     }

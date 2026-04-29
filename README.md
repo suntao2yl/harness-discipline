@@ -1,5 +1,7 @@
 # harness-discipline
 
+[English](README.md) | [中文](README.zh-CN.md)
+
 Three reusable discipline skills for AI-driven software engineering, designed
 to be composed into larger lifecycle harnesses (`harness-plan`,
 `harness-engineering`) or used standalone.

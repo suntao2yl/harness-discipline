@@ -1,7 +1,7 @@
 {
   "name": "harness-discipline",
   "description": "Reusable engineering discipline skills: TDD planning, completion verification, change spec authoring. Composable into harness-plan / harness-engineering or invoked standalone.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "suntao2yl"
   },
