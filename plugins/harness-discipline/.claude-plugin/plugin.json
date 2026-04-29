@@ -1,0 +1,22 @@
+{
+  "name": "harness-discipline",
+  "description": "Reusable engineering discipline skills: TDD planning, completion verification, change spec authoring. Composable into harness-plan / harness-engineering or invoked standalone.",
+  "version": "0.1.0",
+  "author": {
+    "name": "suntao2yl"
+  },
+  "homepage": "https://github.com/suntao2yl/claude-skill-discipline",
+  "repository": "https://github.com/suntao2yl/claude-skill-discipline",
+  "license": "MIT",
+  "keywords": ["tdd", "verification", "rfc", "spec", "discipline", "test-driven", "harness"],
+  "skills": [
+    "./skills/tdd-plan",
+    "./skills/completion-verify",
+    "./skills/change-spec"
+  ],
+  "commands": [
+    "./commands/tdd-plan.md",
+    "./commands/completion-verify.md",
+    "./commands/change-spec.md"
+  ]
+}
