@@ -9,7 +9,7 @@ allowed-tools:
   - Write
 metadata:
   author: suntao2yl
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # /change-spec
@@ -55,6 +55,17 @@ See [TEMPLATE.md](TEMPLATE.md) for the full template with field-by-field rules. 
 - Don't paste large existing code into Interface Signatures. One-line signatures — readers can grep.
 - Don't include schedules or estimates. Specs describe *what*; harness-plan / harness-engineering tracks *when*.
 - Don't pad Out of Scope. Two or three things you considered and rejected. More is noise.
+- Don't smuggle drive-by refactors, style fixes, or speculative abstractions into a CHG. Every changed line must trace to a stated Pre/Post condition. See [resources/code-anti-patterns.md](resources/code-anti-patterns.md) for concrete before/after pairs covering hidden assumptions, speculative complexity, drive-by refactoring, and vague success criteria.
+
+## Surgical-changes test
+
+A change-spec passes the surgical test when:
+
+1. Every line in the eventual diff traces to a Pre/Post condition.
+2. Stylistic drift (quotes, type hints, formatting) inside the touched file is zero — match surrounding style even if you'd write it differently.
+3. Adjacent improvements ("while I'm here let me also...") are filed as separate CHGs, not folded in.
+
+This is downstream review's first check. Failing it means the spec was too loose, not that the implementation was sloppy — fix the spec.
 
 ## Tiny-commit refactor plans
 
@@ -66,4 +77,4 @@ See [TEMPLATE.md](TEMPLATE.md) for the full template with field-by-field rules. 
 - `harness-plan` change units — propose → spec (this skill) → verify → archive.
 - `harness-engineering` design phase — design units use this same format.
 
-See [TEMPLATE.md](TEMPLATE.md), `resources/change-spec-schema.md`, `harness-engineering/docs/id-conventions.md`.
+See [TEMPLATE.md](TEMPLATE.md), [resources/code-anti-patterns.md](resources/code-anti-patterns.md), `resources/change-spec-schema.md`, `harness-engineering/docs/id-conventions.md`.
