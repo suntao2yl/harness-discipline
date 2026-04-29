@@ -2,19 +2,38 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-三个可复用的 AI-Coding 工程纪律 skill,既可以被
+可复用的 AI-Coding 工程纪律 skill,既可以被
 `harness-plan` / `harness-engineering` 组合调用,也可以独立使用。
 
-## 三个 skill
+## Skills 一览
 
-| Slash command       | 作用                                                       |
-| ------------------- | ---------------------------------------------------------- |
-| `/tdd-plan`         | 测试优先计划:test cases + 实现骨架 + verification command |
-| `/completion-verify`| 跑一份 contract 的 verification commands,产出 JSON 判定    |
-| `/change-spec`      | 为 change unit (CHG-NNN) 生成 mini-RFC                      |
+### 核心(被 harness-plan / harness-engineering 调用)
 
-每个 skill 独立,有自己的 SKILL.md,可以单独被调用 — 按需加载,不会一起
-打入 context。
+| Slash command        | 作用                                                       |
+| -------------------- | ---------------------------------------------------------- |
+| `/tdd-plan`          | 测试优先计划:test cases + 实现骨架 + verification command |
+| `/completion-verify` | 跑一份 contract 的 verification commands,产出 JSON 判定    |
+| `/change-spec`       | 为 change unit (CHG-NNN) 生成 mini-RFC                      |
+
+### 工程实践(独立使用)
+
+| Skill 名         | 作用                                                                   |
+| ---------------- | ---------------------------------------------------------------------- |
+| `tdd`            | 红-绿-重构循环,垂直切片,测试不依赖实现细节                          |
+| `write-a-skill`  | 写新 skill / 重构旧 skill 的方法学:progressive disclosure、≤100 行 |
+
+### Autodrive 推荐(token / 安全)
+
+| Skill 名         | 作用                                                                   |
+| ---------------- | ---------------------------------------------------------------------- |
+| `caveman`        | 超压缩输出模式,token 用量降 ~75%,技术内容无损                        |
+| `git-guardrails` | 装一个 PreToolUse hook 拦截危险 git 命令(push / reset --hard 等)     |
+
+每个 skill 独立,有自己的 SKILL.md(均 ≤100 行),可以单独被调用 ——
+按需加载,不会一起打入 context。
+
+后四个独立 skill(`tdd` / `write-a-skill` / `caveman` / `git-guardrails`)
+改编自 [mattpocock/skills](https://github.com/mattpocock/skills),MIT。
 
 ## 为什么单独成包
 
@@ -109,6 +128,15 @@ engineering 项目里写到 `.engineering/design/specs/`),并打印一行
 
 未装 discipline 时,两个上游 skill 都有内联 fallback(结论一致,
 evidence 结构化程度低一点)。
+
+## Autodrive 联动
+
+`harness-plan autodrive on` 之后,无人值守跑 campaign。推荐同时启用:
+
+- `caveman` — token 大幅降低,日志仍可读
+- `git-guardrails` — 安装 hook 拦截 `git push` / `reset --hard` 等不可逆操作
+
+两者只需各装一次,所有 autodrive session 自动生效。
 
 ## License
 

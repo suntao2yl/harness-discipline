@@ -1,18 +1,22 @@
 {
   "name": "harness-discipline",
-  "description": "Reusable engineering discipline skills: TDD planning, completion verification, change spec authoring. Composable into harness-plan / harness-engineering or invoked standalone.",
-  "version": "0.1.1",
+  "description": "Reusable engineering discipline skills: TDD planning, completion verification, change spec authoring, plus standalone helpers (tdd, write-a-skill, caveman, git-guardrails). Composable into harness-plan / harness-engineering or invoked standalone.",
+  "version": "0.2.0",
   "author": {
     "name": "suntao2yl"
   },
   "homepage": "https://github.com/suntao2yl/claude-skill-discipline",
   "repository": "https://github.com/suntao2yl/claude-skill-discipline",
   "license": "MIT",
-  "keywords": ["tdd", "verification", "rfc", "spec", "discipline", "test-driven", "harness"],
+  "keywords": ["tdd", "verification", "rfc", "spec", "discipline", "test-driven", "harness", "caveman", "git-guardrails", "autodrive"],
   "skills": [
     "./skills/tdd-plan",
     "./skills/completion-verify",
-    "./skills/change-spec"
+    "./skills/change-spec",
+    "./skills/tdd",
+    "./skills/write-a-skill",
+    "./skills/caveman",
+    "./skills/git-guardrails"
   ],
   "commands": [
     "./commands/tdd-plan.md",

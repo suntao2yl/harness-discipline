@@ -2,20 +2,40 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Three reusable discipline skills for AI-driven software engineering, designed
-to be composed into larger lifecycle harnesses (`harness-plan`,
+Reusable discipline skills for AI-driven software engineering, designed to
+be composed into larger lifecycle harnesses (`harness-plan`,
 `harness-engineering`) or used standalone.
 
 ## Skills
 
-| Slash command       | Purpose                                                       |
-| ------------------- | ------------------------------------------------------------- |
-| `/tdd-plan`         | Test-first plan: test cases + implementation skeleton         |
-| `/completion-verify`| Run a contract's verification commands and produce JSON verdict |
-| `/change-spec`      | Generate a mini-RFC for a change unit (CHG-NNN)               |
+### Core (used by harness-plan / harness-engineering)
 
-Each skill is independent, has its own SKILL.md, and can be invoked without
-loading the others — load on demand.
+| Slash command        | Purpose                                                         |
+| -------------------- | --------------------------------------------------------------- |
+| `/tdd-plan`          | Test-first plan: test cases + implementation skeleton           |
+| `/completion-verify` | Run a contract's verification commands and produce JSON verdict |
+| `/change-spec`       | Generate a mini-RFC for a change unit (CHG-NNN)                 |
+
+### Engineering practice (standalone)
+
+| Skill name        | Purpose                                                                          |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `tdd`             | Red-green-refactor in vertical slices; tests survive refactors                   |
+| `write-a-skill`   | Author or refactor skills with proper structure and progressive disclosure       |
+
+### Token / safety helpers (recommended for autodrive)
+
+| Skill name        | Purpose                                                                          |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `caveman`         | Ultra-compressed output mode; cuts token usage ~75% with no loss of substance    |
+| `git-guardrails`  | PreToolUse hook that blocks dangerous git commands before they execute           |
+
+Each skill is independent, has its own SKILL.md (≤100 lines), and can be
+invoked without loading the others — load on demand.
+
+The four standalone / helper skills (`tdd`, `write-a-skill`, `caveman`,
+`git-guardrails`) are adapted from
+[mattpocock/skills](https://github.com/mattpocock/skills) under MIT.
 
 ## Why this exists
 

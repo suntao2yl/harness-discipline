@@ -4,17 +4,17 @@
     "name": "suntao2yl"
   },
   "metadata": {
-    "description": "Reusable engineering-discipline skills (TDD, completion verification, change spec) for Claude Code.",
-    "version": "0.1.1"
+    "description": "Reusable engineering-discipline skills (TDD, completion verification, change spec) plus standalone helpers (tdd, write-a-skill, caveman, git-guardrails) for Claude Code.",
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "harness-discipline",
       "source": "./plugins/harness-discipline",
-      "description": "Three reusable discipline skills: /tdd-plan, /completion-verify, /change-spec. Used standalone or by harness-plan / harness-engineering for shared discipline.",
-      "version": "0.1.1",
+      "description": "Seven discipline skills: /tdd-plan, /completion-verify, /change-spec, plus tdd, write-a-skill, caveman, git-guardrails. Used standalone or by harness-plan / harness-engineering.",
+      "version": "0.2.0",
       "category": "workflow",
-      "tags": ["tdd", "verification", "rfc", "discipline", "spec", "test-driven"]
+      "tags": ["tdd", "verification", "rfc", "discipline", "spec", "test-driven", "caveman", "autodrive", "git-guardrails"]
     }
   ]
 }
