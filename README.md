@@ -14,7 +14,7 @@ be composed into larger lifecycle harnesses (`harness-plan`,
 | -------------------- | --------------------------------------------------------------- |
 | `/tdd-plan`          | Test-first plan: test cases + implementation skeleton           |
 | `/completion-verify` | Run a contract's verification commands and produce JSON verdict |
-| `/change-spec`       | Generate a mini-RFC for a change unit (CHG-NNN)                 |
+| `/change-spec`       | Generate a mini-RFC for a change unit (CHG-NNN); enforces the surgical-changes test |
 
 ### Engineering practice (standalone)
 
@@ -36,6 +36,12 @@ invoked without loading the others — load on demand.
 The four standalone / helper skills (`tdd`, `write-a-skill`, `caveman`,
 `git-guardrails`) are adapted from
 [mattpocock/skills](https://github.com/mattpocock/skills) under MIT.
+
+The `change-spec` anti-patterns reference (`skills/change-spec/resources/code-anti-patterns.md`)
+distills concrete before/after pairs from
+[karpathy-guidelines](https://github.com/forrestchang/andrej-karpathy-skills) under MIT —
+hidden assumptions, speculative complexity, drive-by refactoring, and vague
+success criteria, each shown as a bad spec vs. a surgical spec.
 
 ## Why this exists
 

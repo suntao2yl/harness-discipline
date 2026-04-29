@@ -13,7 +13,7 @@
 | -------------------- | ---------------------------------------------------------- |
 | `/tdd-plan`          | 测试优先计划:test cases + 实现骨架 + verification command |
 | `/completion-verify` | 跑一份 contract 的 verification commands,产出 JSON 判定    |
-| `/change-spec`       | 为 change unit (CHG-NNN) 生成 mini-RFC                      |
+| `/change-spec`       | 为 change unit (CHG-NNN) 生成 mini-RFC,内置 surgical-changes 反模式校验 |
 
 ### 工程实践(独立使用)
 
@@ -117,7 +117,11 @@ engineering 项目里写到 `.engineering/design/specs/`),并打印一行
 ```
 
 输出格式与 lint 规则见
-`skills/change-spec/resources/change-spec-schema.md`。
+`skills/change-spec/resources/change-spec-schema.md`;
+4 类常见反模式(隐含假设 / 推测性复杂度 / drive-by 重构 / 模糊成功标准)
+的 before/after 代码对照见
+`skills/change-spec/resources/code-anti-patterns.md`,改编自
+[karpathy-guidelines](https://github.com/forrestchang/andrej-karpathy-skills) (MIT)。
 
 ## 与上游 skill 的协作
 
